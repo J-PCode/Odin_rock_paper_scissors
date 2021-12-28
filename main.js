@@ -1,19 +1,28 @@
 const shapes =['rock', 'paper', 'scissors'];
 let computer = 0;
 let player = 0;
+// tässä annetaan tietokoneen arvo
 function computerPlay(){
     const random = Math.floor(Math.random() * shapes.length);
     return (shapes[random]);
     }
+    //käyttäjän valinta 3 näppäintä
 function playerSelect(){
-    let playerSelected = prompt("choose your weapon Rock, Paper, Scissors?,");
-    return playerSelected.toLowerCase();
-    
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) =>{
+    button.addEventListener("click", () => {
+         playRound(button.id);//tähän lisätään se mitä tapahtuu kun nappia on painettu
+
+    })
+});    
 }
+
 //tässä otetaan erä, lisätään piste voittajalle ja kerrotaan tulos, voisihan tämän tulosten kertomisen jotenkin lyhyemmin varmaan tehdä... esim. console.log(´${playerSelection} vs ${computerSelection}, ${result})
-function playRound(){
-let playerSelection = playerSelect();
+function playRound(playerSelection){
+//let playerSelection = playerSelect();
 let computerSelection = computerPlay();
+
+// tähän taitaa tulla sitten se tekstin lisäys sivustolle
 if(playerSelection=='rock' && computerSelection == 'paper'){
     computer++
     return "You lose! Paper beats Rock";
@@ -48,19 +57,20 @@ if(playerSelection=='paper' && computerSelection == 'rock'){
     return "You win, paper beats the rock!";
 }
 }
-
 //game function tässä määritetään että pelataan 5 erää ja lopuksi ilmoitetaan voittaja. 
-function Game(){
-    for(i=1;i<=5;i++){
-        console.log(playRound());
-        }
-if(player>computer){
-console.log("congratulations you won the game");
-}
-else if(player == computer){
-    console.log("game over, it was a tie!");
-}
-else{
-    console.log("unfortunately you lose");
-}
-}
+// function Game(){
+//     for(i=1;i<=5;i++){
+//         console.log(playRound());
+//         }
+// if(player>computer){
+// console.log("congratulations you won the game");
+// }
+// else if(player == computer){
+//     console.log("game over, it was a tie!");
+// }
+// else{
+//     console.log("unfortunately you lose");
+// }
+// }
+
+//add button event listeners using forEach method
