@@ -8,17 +8,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
-        <h1 class="header"></h1>
-        <div>
+    <div class="cont">
+        <div class="container">            
+        <h1 class="header">Rock Paper Scissors</h1>     
+        <!-- tämä näyttää pelin tilanteen -->
+        <h2 class="round"></h2>
+        <div id="game" class="hide">
             <p class="info">Player vs Computer</p>
-            <p class="results"></p>
-            <p class="resultText"></p>
+            <p class="info">-</p>
+            <p class="info">choose your weapon</p>
+            <div class="buttons">
+                <button id="rock">Rock</button>
+                <button id="paper">Paper</button>
+                <button id="scissors">Scissors</button>
+            </div>
         </div>
-        <div>
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
+        <!-- tämä näyttää tuloksen -->
+        <div id="results">
+            <p id="valitsi">Classic rock, paper and Scissors game. In this version you play against computer. First one to get 5 points wins.</p>
+            <p id="pisteet"></p>
+            <p id="tulos">Start game</p> 
+            <div class="buttons">
+                <button id="begin">Begin</button>
+            </div>
+
+        </div>
         </div>
     </div>
     <script src="main.js"></script>
