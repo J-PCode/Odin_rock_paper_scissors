@@ -73,7 +73,7 @@ function results(){
         document.querySelector("#game").classList.add("hide");
     document.querySelector("#results").classList.remove("hide");
     console.log("tulos", tulos)
-    if(playerSelection != "begin" && (player == 3 || computer == 3)){
+    if(playerSelection != "begin" && (player == 5 || computer == 5)){
         endGame();    
     }
     }
@@ -93,13 +93,13 @@ function reset(){
     
 }    
 function endGame(){   
-    if(player >= 3){
+    if(player >= 5){
         document.querySelector(".round").textContent = `Congratulations you won the game!!!`;
         document.querySelector("#valitsi").textContent = `${tulos}`;
         document.querySelector("#begin").textContent = "New Game"; 
         reset();
     }
-    else if(computer >= 3){
+    else if(computer >= 5){
         document.querySelector(".round").textContent = `Unfortunately you lose!!!`;
         document.querySelector("#valitsi").textContent = `${tulos}`;
         document.querySelector("#begin").textContent = "New Game";
@@ -108,7 +108,7 @@ function endGame(){
 
 }
 function game(){
-if(playerSelection == "begin" && (player < 3 || computer < 3)){
+if(playerSelection == "begin" && (player < 5 || computer < 5)){
     nextRound();
 }
 
